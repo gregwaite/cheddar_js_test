@@ -32,11 +32,13 @@ class TestIndex extends React.Component {
 
   getIndexItems() {
     const tests = Object.keys(this.results);
-    return tests.map((test, idx) => {
-      const { passes, failures } = this.results[test];
+    return tests.map((testName, idx) => {
+      const { passes, failures } = this.results[testName];
       return (
         <div key={idx}>
-          <p>{test}</p>
+          <u>
+            <p className="test-name">{testName}</p>
+          </u>
           <TestIndexItem passes={passes} failures={failures}></TestIndexItem>
         </div>
       );
@@ -47,7 +49,7 @@ class TestIndex extends React.Component {
     const { stats } = this.props;
     return (
       <div>
-        <div>{`${stats.passes} Passed | ${stats.failures} Failed`}</div>
+        <div className="totals">{`${stats.passes} Passed | ${stats.failures} Failed`}</div>
         {this.indexItems}
       </div>
     );

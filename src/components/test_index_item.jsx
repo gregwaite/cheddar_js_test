@@ -13,10 +13,18 @@ class TestIndexItem extends React.Component {
 
   getResults() {
     this.passLis = this.passes.map((pass, idx) => {
-      return <li key={idx}>{pass.title}</li>;
+      return (
+        <li key={idx} className="pass">
+          {pass.title}
+        </li>
+      );
     });
     this.failLis = this.failures.map((failure, idx) => {
-      return <li key={idx}>{failure.title}</li>;
+      return (
+        <li key={idx} className="failure">
+          {failure.title}
+        </li>
+      );
     });
   }
 
@@ -34,7 +42,7 @@ class TestIndexItem extends React.Component {
   render() {
     return (
       <div>
-        <p>{this.resultsText}</p>
+        <p className="results-text">{this.resultsText}</p>
         {this.passLis}
         {this.failLis}
       </div>

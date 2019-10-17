@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
 .App-logo {
@@ -21,6 +21,39 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.totals {
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.test-name {
+  font-weight: 400;
+}
+
+.results-text {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.pass:before {
+  content: "✓ ";
+}
+.pass {
+  color: #18e418;
+  font-size: 15px;
+  list-style-type: none;
+}
+
+.failure:before {
+  content: "x ";
+  color: red;
+  font-weight: 300;
+  font-family: Arial, sans-serif;
+}
+.failure {
+  color: red;
 }
 
 @keyframes App-logo-spin {
